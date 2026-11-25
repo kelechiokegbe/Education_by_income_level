@@ -41,3 +41,7 @@ household_income_data = (
 """Read in data files and store them as a dataframe."""
 key_stage_4_df = read_raw_data(key_stage_4_data, data_path)
 household_income_df = read_raw_data(household_income_data, data_path)
+
+#TO DO: Add analysis.
+#TO DO: Export results to a CSV file.
+#TO DO: Add tests.
