@@ -5,13 +5,15 @@ Load the raw education-performance and household-income data, produce analysis, 
 from pathlib import Path
 import pandas as pd
 
-def read_raw_data(file_name: str) -> pd.DataFrame:
+def read_raw_data(file_name: str, data_path: Path) -> pd.DataFrame:
     """Read one CSV file from the project's raw-data directory.
 
     Parameters
     ----------
     file_name : str
         Name of the CSV file in ``data/raw``.
+    data_path : pathlib.Path
+        Path to the raw-data directory.
 
     Returns
     -------
@@ -36,5 +38,6 @@ household_income_data = (
     "regionalgrossdisposablehouseholdincomelocalauthorities2024 (1).csv"
 )
 
-key_stage_4_df = read_raw_data(key_stage_4_data)
-household_income_df = read_raw_data(household_income_data)
+"""Read in data files and store them as a dataframe."""
+key_stage_4_df = read_raw_data(key_stage_4_data, data_path)
+household_income_df = read_raw_data(household_income_data, data_path)
