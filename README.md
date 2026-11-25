@@ -7,8 +7,22 @@ Where this documentation refers to the root folder we mean where this README.md 
 located.
 ```
 ## What is `Education_by_income_level`?
+#Hypothesis: Local authorities with higher average GDHI will have higher average Attainment 8 scores and have higher percentage of students with GCSE pass marks (scores over 4)
 
-Add a summary of your project here.
+#Glossary
+#Attainment 8 score: Attainment 8 is an official Department for Education measure showing a pupil’s or school’s average achievement across eight GCSE‑level subjects, with English and maths double‑weighted and a maximum possible score of 90 points
+#GDHI: gross disposable household income, refers to the total income available for spending or saving after all taxes and direct benefits have been paid. It reflects the material welfare of households and includes income from various sources such as wages, pensions, and self-employment. In the UK, GDHI is calculated after income distribution measures, and it is a key indicator of household financial well-being 
+
+#Method: correlate local authorities GDHI with their average attainment 8 scores/percentage pass rate.
+
+#create bespoke education attainment dataset using https://explore-education-statistics.service.gov.uk/data-tables/fast-track/93f16980-b9c5-4dd2-5456-08de072d13df website.
+#step 1: key stage 4 performance 
+#step 2: All state-funded pupil characteristics and geography data
+#step 3: Local authority & Region
+#step 4: 2018/19 to 2024/25
+#step 5: Average Attainment 8 score & percentage of pupils acheiving grades 4 or above in English and maths GCSE
+
+
 
 ## Getting started
 
