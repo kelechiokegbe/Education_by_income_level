@@ -855,9 +855,6 @@ MigrationBackup/
 
 ### Education by income level ###
 
-# Ignore the contents of the `data` folder, except for the `README.md` file
-data/*
-!data/README.md
 
 # Ignore the contents of the `data` sub-folders, except for their `.gitkeep` files; adapted from
 # https://stackoverflow.com/a/20652768
@@ -886,7 +883,6 @@ docs/reference/api/*
 docs/_linkcheck/
 
 # Commonly used data file extensions
-
-*.csv
 *.xls
 *.xlsx
+!data/raw/*.csv
