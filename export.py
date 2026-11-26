@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import xlsxwriter 
+import openpyxl
 
 def create_excel_doc_test(excel_doc):
 
@@ -11,6 +12,9 @@ def create_excel_doc_test(excel_doc):
 
     Outputs: xlsx: An excel file saved in the CDSW project area you are working in
     """
+    full_path = os.path.join("outputs", excel_doc)
+
+    wb = openpyxl.load_workbook(full_path)
 
     directory_name = excel_doc.split('_')  # splits excel name into list based on presence of underscore
     directory = directory_name[0]  # Zeroth element of list == directory name - so HESA_QA_2025 will be saved to HESA
@@ -21,11 +25,13 @@ def create_excel_doc_test(excel_doc):
         print("!!!!! " + excel_doc + " already exists. No new file created!!!!!")
 
     elif os.path.isdir(directory):
-        print(f"{directory} already exists")  # checks if directory exists, and prints message if it does
-        save_path = f"D:/python/Hackathon_v2/Education_by_income_level/outputs/{directory}/"  # makes custom save path
-        full_path = os.path.join(save_path, excel_doc)  # file path you want to save the file to e.g /home/cdsw/{directory}/filename
-        writer = pd.ExcelWriter(full_path, engine='xlsxwriter')  # If you are returning to a QA you have already started do not run this line
-        writer.close
+        print(f"{directory} already exists")
+
+        output_dir = "outputs"
+        full_path = os.path.join(output_dir, excel_doc)
+
+        writer = pd.ExcelWriter(full_path, engine="xlsxwriter")
+        writer.close()
 
     else:
         os.mkdir(directory)  # makes directory if it doesn't exist
@@ -35,10 +41,7 @@ def create_excel_doc_test(excel_doc):
         writer.close()
 
 
-
-excel_doc = "Education_by_Income_2017.xlsx"
-create_excel_doc_test(excel_doc)
-
+excel_doc = "Test"
 
 
 

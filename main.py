@@ -4,6 +4,8 @@ Load the raw education-performance and household-income data, produce analysis, 
 
 from pathlib import Path
 import pandas as pd
+from export import * 
+import openpyxl
 
 def read_raw_data(file_name: str, data_path: Path) -> pd.DataFrame:
     """Read one CSV file from the project's raw-data directory.
@@ -32,7 +34,6 @@ def read_raw_data(file_name: str, data_path: Path) -> pd.DataFrame:
         return pd.read_csv(file_path)
     raise ValueError(f"Unsupported raw-data file type: {file_path.suffix}")
 
-"""Set the path and give names to the raw-data files."""
 data_path = Path(__file__).resolve().parent / "data" / "raw"
 key_stage_4_data = "data-key-stage-4-performance (1).csv"
 household_income_data = (
@@ -43,6 +44,4 @@ household_income_data = (
 key_stage_4_df = read_raw_data(key_stage_4_data, data_path)
 household_income_df = read_raw_data(household_income_data, data_path)
 
-#TO DO: Add analysis.
-#TO DO: Use export.py to export the results to a CSV file.
-#TO DO: Add tests.
+print(key_stage_4_df.head())
